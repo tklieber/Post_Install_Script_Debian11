@@ -3,7 +3,7 @@
 # Nom		: postinstallation.sh
 # Auteur	: Tristan KLIEBER
 # Email		: tklieber@myges.fr
-# Version	: 1.3.1
+# Version	: v.0
 
 # tester si on est en root
 if [ "$USER" != "root" ]
