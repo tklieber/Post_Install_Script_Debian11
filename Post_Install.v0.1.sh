@@ -88,7 +88,7 @@ alias rgrep="find . type f|xargs grep -win"
 
 EOF
 
-echo `cat /root/.bashrc` >> /home/$simpleuser/.bashrc
+echo `cat /root/.bashrc` > /home/$simpleuser/.bashrc
 
 echo "Done !"
 echo "+++++++++++++++++++++++++++++++++++++++++++++++++++"
