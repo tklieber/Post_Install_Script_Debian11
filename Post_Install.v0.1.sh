@@ -237,8 +237,8 @@ echo "Done !"
 echo "+++++++++++++++"
 echo "backup volume descriptor"
 
-vgcfgbackup -f /root/backup/v0/sda.VGCRYPT.backup
-pigz -p4 -k -9 /root/backup/v0/sda.VGCRYPT.backup
+vgcfgbackup -f /root/backup/v0/sda.VGCFG.backup
+pigz -p4 -k -9 /root/backup/v0/sda.VGCFG.backup
 
 echo ""
 echo "Done !"
@@ -247,10 +247,12 @@ echo "backup boot and efi boot"
 
 ddrescue /dev/sda1 /root/backup/v0/sda1.BOOT.ddr
 ddrescue /dev/sda2 /root/backup/v0/sda2.BOOTefi.ddr
-ddrescue /dev/sda3 /root/backup/v0/sda3.VGCRYPT.ddr
+ddrescue /dev/VGCRYPT/lv_root /root/backup/v0/sda3.VGCRYPT.lv_root.ddr
+ddrescue /dev/VGCRYPT/lv_var /root/backup/v0/sda3.VGCRYPT.lv_var.ddr
 pigz -p4 -k -9 /root/backup/v0/sda1.BOOT.ddr
 pigz -p4 -k -9 /root/backup/v0/sda2.BOOTefi.ddr
-pigz -p4 -k -9 /root/backup/v0/sda3.VGCRYPT.ddr
+pigz -p4 -k -9 /root/backup/v0/sda3.VGCRYPT.lv_root.ddr
+pigz -p4 -k -9 /root/backup/v0/sda3.VGCRYPT.lv_var.ddr
 
 echo "Done !"
 echo ""
