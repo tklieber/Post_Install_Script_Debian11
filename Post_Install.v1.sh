@@ -387,5 +387,9 @@ echo "--> service php7.3-fpm restart"
 echo ""
 echo "Done installing !"
 
+echo ""
+echo "Backuping mariaDB"
+mysqldump --user=nimda --password=nimda --lock-tables --all-databases > /data/backup/dbs.sql
+
 
 exit
